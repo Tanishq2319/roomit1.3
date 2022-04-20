@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../Sign.dart';
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -28,7 +30,9 @@ class _HomeState extends State<Home> {
           onPressed: () {},),
 
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.email,color: Colors.teal.shade700,))
+          IconButton(onPressed: () {
+            signState().signOut();
+          }, icon: Icon(Icons.email,color: Colors.teal.shade700,))
         ]
       ),
        //This is for tab bar.
