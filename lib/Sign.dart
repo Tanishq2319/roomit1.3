@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:room_it/Dev/underDev.dart';
+import 'package:room_it/create_ac/sign_up.dart';
 import 'package:room_it/main.dart';
 
 
@@ -160,7 +161,7 @@ class signState extends State<sign> {
                     InkWell(
                       onTap: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => const develop()),
+                          MaterialPageRoute(builder: (context) => const Signup()),
                         );
                       },
                       child: const Text("Register",style: TextStyle(fontWeight: FontWeight.bold,fontFamily: "Montserrat",decoration: TextDecoration.underline),)

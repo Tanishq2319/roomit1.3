@@ -2,7 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:room_it/Main%20Page/home_screen.dart';
-import 'Sign.dart';
+import 'package:room_it/create_ac/sign_up.dart';
+
 
 
 
@@ -53,7 +54,7 @@ class _MainPageState extends State<MainPage> {
       body: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == null) {
+          if (snapshot.connectionState == ConnectionState) {
             return const Center(child: CircularProgressIndicator());
             //return const Center(child: Text("entre the data..."));
           } else if (snapshot.hasError) {
@@ -65,7 +66,7 @@ class _MainPageState extends State<MainPage> {
               return const Home();
           }
           else {
-            return const sign();
+            return const Signup();
           }
       },
       ),
